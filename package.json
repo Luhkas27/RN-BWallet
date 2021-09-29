@@ -8,11 +8,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint --ext .tsx --ext .ts src/ --fix", "git add"
-    ],
-    "./src/**": [
-      "prettier --write ."
+    "src/*.{ts,tsx}": [
+      "yarn prettier:fix",
+       "yarn lint"
     ]
   },
   "scripts": {
@@ -20,7 +18,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint src",
+    "prettier:fix": "prettier --write",
+    "prettier:check": "prettier --check"
   },
   "dependencies": {
     "react": "17.0.2",
