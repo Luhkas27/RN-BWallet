@@ -8,8 +8,11 @@
     }
   },
   "lint-staged": {
-    "*.tsx": [
-      "eslint --fix", "git add"
+    "src/**/*.{ts,tsx}": [
+      "eslint --ext .tsx --ext .ts src/ --fix", "git add"
+    ],
+    "./src/**": [
+      "prettier --write ."
     ]
   },
   "scripts": {
