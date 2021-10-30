@@ -11,7 +11,7 @@ export const Home = () => {
   return (
     <S.Container>
       <Label color="primary_blue">Home</Label>
-      <Image source={icons.bell} style={{ width: 50, height: 50 }} />
+      <Image source={icons.bell} style={{ width: 20, height: 20 }} />
     </S.Container>
   )
 }
