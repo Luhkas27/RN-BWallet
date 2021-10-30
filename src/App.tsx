@@ -1,12 +1,20 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import Config from 'react-native-config'
+
+import { ThemeProvider } from 'styled-components'
+
+import { Home } from '@screens'
+
+import { theme } from '@theme'
+
+import StorybookUI from '../storybook'
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   )
 }
 
-export default App
+export default Config.LOAD_STORYBOOK === 'true' ? StorybookUI : App
